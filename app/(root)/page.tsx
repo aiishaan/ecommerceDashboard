@@ -7,7 +7,7 @@ const SetupPage = () => {
         <UserButton afterSignOutUrl="/" />
       </div>
       <div>
-        <h1 className="right-44">Hello</h1>
+        <h1 className="right-44">Hello my name is aniruddha</h1>
       </div>
       </>
     );
