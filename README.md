@@ -9,11 +9,11 @@ configure `.env.local` with your api keys from clarkauth according to `.env.exam
 `npm install`
 
 `npm run dev`
-# or
+or
 `yarn dev`
-# or
+or
 `pnpm dev`
-# or
+or
 `bun dev`
 
 
