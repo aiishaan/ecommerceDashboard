@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, run the development server:
 
-configure `.env.local` with your api keys from clarkauth according to `.env.example`.
+configure `.env` with your api keys from clarkauth according to `.env.example`.
 
 `npm install`
 
