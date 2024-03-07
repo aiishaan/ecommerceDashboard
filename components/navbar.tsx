@@ -14,7 +14,7 @@ const Navbar = async () =>{
 
     const stores = await prismadb.store.findMany({
         where:{
-            userId:userId
+            userId:userId,
         },
     });
     return (
