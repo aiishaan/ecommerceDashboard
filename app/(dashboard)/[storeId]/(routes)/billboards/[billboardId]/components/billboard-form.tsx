@@ -75,7 +75,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
             setLoading(true);
             await axios.delete(`/api/${params.storeId}/billboards/${params.billboardId}`);
             router.refresh();
-            router.push("/");
+            router.push(`/${params.storeId}/billboards`);
             toast.success("Billboard deleted!");
         } catch(error) {
             toast.error("Make sure you removed all categories that are using this billboard first!");
@@ -83,7 +83,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
             setLoading(false);
             setOpen(false);
         }
-    }
+    };
 
     return (
         <>
@@ -132,7 +132,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
                                 </FormItem>
                             )} 
                         />
-                    <div className="grid grid-cols-3 gap-8">
+                    <div className="md:grid md:grid-cols-3 gap-8">
                         <FormField
                             control={form.control}
                             name = "label"
