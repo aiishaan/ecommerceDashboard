@@ -17,9 +17,6 @@ import { useParams, useRouter } from "next/navigation";
 import { AlertModal } from "@/components/modals/alert-modal";
 import ImageUpload from "@/components/ui/image-upload";
 
-interface BillboardFormProps {
-    initialData: Billboard | null;
-}
 
 const formSchema = z.object({
     label: z.string().min(1),
@@ -27,6 +24,10 @@ const formSchema = z.object({
 });
 
 type BillboardFormValues = z.infer<typeof formSchema>;
+
+interface BillboardFormProps {
+    initialData: Billboard | null;
+}
 
 export const BillboardForm: React.FC<BillboardFormProps> = ({
     initialData
@@ -37,7 +38,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    const title = initialData? "Edit billboard" : "Create billboard";
+    const title = initialData ? "Edit billboard" : "Create billboard";
     const description = initialData? "Edit a billboard" : "Add a new billboard";
     const toastmessage = initialData? "Billboard updated" : "Billboard created";
     const action = initialData? "Save changes" : "Create";

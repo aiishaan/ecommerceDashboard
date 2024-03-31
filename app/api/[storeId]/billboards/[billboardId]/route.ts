@@ -9,10 +9,10 @@ export async function GET(
     try {
 
         if(!params.billboardId) {
-            return new NextResponse("Store id is required", {status : 400});
+            return new NextResponse("Billboard id is required", {status : 400});
         }
 
-        const billboard = await prismadb.store.findUnique({
+        const billboard = await prismadb.billboard.findUnique({
             where:{
                 id: params.billboardId,
             }
@@ -63,7 +63,7 @@ export async function PATCH(
             return new NextResponse("Unauthorized", {status:403});
         }
 
-        const billboard = await prismadb.billboard.updateMany({
+        const billboard = await prismadb.billboard.update({
             where:{
                 id: params.billboardId,
             },
@@ -90,12 +90,12 @@ export async function DELETE(
 
 
         if(!userId){
-            return new NextResponse("Unauthenticated", {status: 401});
+            return new NextResponse("Unauthenticated", {status: 403});
         }
 
 
         if(!params.billboardId) {
-            return new NextResponse("Store id is required", {status : 400});
+            return new NextResponse("Billboard id is required", {status : 400});
         }
 
         const storeByUserId = await prismadb.store.findFirst({
@@ -106,10 +106,10 @@ export async function DELETE(
         });
 
         if(!storeByUserId){
-            return new NextResponse("Unauthorized", {status:403});
+            return new NextResponse("Unauthorized", {status:405});
         }
 
-        const billboard = await prismadb.store.deleteMany({
+        const billboard = await prismadb.billboard.delete({
             where:{
                 id: params.billboardId,
             }

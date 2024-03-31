@@ -19,8 +19,9 @@ export const CellAction: React.FC<CellActionProps> = ({
 }) => {
     const router = useRouter();
     const params = useParams();
-    const[loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
+    const[loading, setLoading] = useState(false);
+    
 
     const onCopy = (id:string) => {
         navigator.clipboard.writeText(id);
@@ -31,13 +32,13 @@ export const CellAction: React.FC<CellActionProps> = ({
         try{
             setLoading(true);
             await axios.delete(`/api/${params.storeId}/billboards/${data.id}`);
-            router.refresh();
             toast.success("Billboard deleted!");
+            router.refresh();
         } catch(error) {
             toast.error("Make sure you removed all categories that are using this billboard first!");
         } finally {
-            setLoading(false);
             setOpen(false);
+            setLoading(false);
         }
     };
 
