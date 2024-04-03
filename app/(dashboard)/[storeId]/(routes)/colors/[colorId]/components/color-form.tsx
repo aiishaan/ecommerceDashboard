@@ -63,8 +63,9 @@ export const ColorForm: React.FC<ColorFormProps> = ({
                 await axios.post(`/api/${params.storeId}/colors`, data);
             }
 
-            router.refresh();
+        
             router.push(`/${params.storeId}/colors`);
+            router.refresh();
             toast.success(toastmessage);
         } catch(error){
             toast.error("OOPS, something went wrong.");
@@ -77,8 +78,8 @@ export const ColorForm: React.FC<ColorFormProps> = ({
         try{
             setLoading(true);
             await axios.delete(`/api/${params.storeId}/colors/${params.colorId}`);
-            router.refresh();
             router.push(`/${params.storeId}/colors`);
+            router.refresh();
             toast.success("Color deleted!");
         } catch(error) {
             toast.error("Make sure you removed all products that are using this color first!");
