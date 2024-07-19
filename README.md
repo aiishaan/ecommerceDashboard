@@ -1,5 +1,5 @@
 # Ecommerce-Admin
-Our E-commerce Dashboard is designed to revolutionize the way businesses manage their online stores. This integrated management system features a user-friendly interface and a flexible online store platform, enabling seamless updates and efficient management. With real-time tracking of key performance indicators, it empowers businesses to optimize their digital storefronts effectively.
+Our E-commerce Dashboard is designed to revolutionize the way businesses manage their online stores. This integrated management system features a user-friendly interface and a flexible online store platform, enabling seamless updates and efficient management With real-time tracking of key performance indicators, it empowers businesses to optimize their digital storefronts effectively.
 
 ### Prerequisites
 Node version 14.x
