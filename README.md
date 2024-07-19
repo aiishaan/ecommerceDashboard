@@ -34,7 +34,7 @@ STRIPE_WEBHOOK_SECRET=
 npx prisma generate
 npx prisma db push
 ```
-### Start the app.
+### Start the app
 
 ```shell
 npm run dev
