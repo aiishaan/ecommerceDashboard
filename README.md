@@ -9,7 +9,7 @@ Clone the repo using
 ```shell 
 git clone https://github.com/aiishaan/ecommerceDashboard.git
 ```
-### Install packages
+### Install packages.
 ```shell
 npm i
 ```
